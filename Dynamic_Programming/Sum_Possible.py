@@ -19,7 +19,6 @@ def sum_possible(amount: int, numbers: list[int]) -> bool:
 # Time Complexity: O(n^a)
 # Space Complexity: O(n)
 
-
 def sum_possible(amount: int, numbers: list[int]) -> bool:
 
     return _sum_possible(amount, numbers, {})
