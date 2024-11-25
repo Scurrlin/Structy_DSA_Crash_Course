@@ -1,7 +1,7 @@
 # Graphs = Nodes + Edges
 # Any node that can be accessed from your current node by an edge is a neighbor
 
-# BF
+# BFS
 from collections import deque
 
 def breadth_first_print(graph, start):
@@ -13,7 +13,7 @@ def breadth_first_print(graph, start):
         for neighbor in graph[current]:
             queue.append(neighbor)
 
-# DF
+# DFS
 def depth_first_print(graph, start):
     stack = [start]
     while len(stack) > 0:
@@ -23,7 +23,7 @@ def depth_first_print(graph, start):
         for neighbor in graph[current]:
             stack.append(neighbor)
 
-# Recursive DF
+# Recursive
 def depth_first_print_recursion(graph, current):
     print(current)
     for neighbor in graph[current]:
