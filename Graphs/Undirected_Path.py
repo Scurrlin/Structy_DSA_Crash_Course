@@ -47,42 +47,42 @@ def has_path(graph, src, dst, visited):
 
 def undirected_path_recursion(edges: list[tuple[int, int]], node_A: int, node_B: int) -> bool:
 
-  graph = build_graph(edges)
-  return has_path(graph, node_A, node_B, set())
+    graph = build_graph(edges)
+    return has_path(graph, node_A, node_B, set())
 
 def build_graph(edges: list[tuple[int, int]]) -> dict[int, list[int]]:
 
-  graph = {}
+    graph = {}
 
-  for edge in edges:
-    a, b = edge
+    for edge in edges:
+        a, b = edge
 
     if a not in graph:
-      graph[a] = []
+        graph[a] = []
     if b not in graph:
-      graph[b] = []
+        graph[b] = []
 
     graph[a].append(b)
     graph[b].append(a)
 
-  return graph
+    return graph
 
 
 def has_path(graph: dict[int, list[int]], src: int, dst: int, visited: set[int]) -> bool:
 
-  if src == dst:
-    return True
+    if src == dst:
+        return True
 
-  if src in visited:
+    if src in visited:
+        return False
+
+    visited.add(src)
+
+    for neighbor in graph[src]:
+        if has_path(graph, neighbor, dst, visited) == True:
+            return True
+
     return False
-
-  visited.add(src)
-
-  for neighbor in graph[src]:
-    if has_path(graph, neighbor, dst, visited) == True:
-      return True
-
-  return False
 
 # Time Complexity: O(n)
 # Space Complexity: O(n)    
