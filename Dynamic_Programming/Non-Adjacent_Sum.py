@@ -7,14 +7,11 @@
 # The maximum non-adjacent sum is 16, because 4 + 12. 4 and 12 are not adjacent in the list.
 
 def non_adjacent_sum(nums: list[int]) -> int:
-
     if len(nums) == 0:
         return 0
     
     include = nums[0] + non_adjacent_sum(nums[2:])
-    
     exclude = non_adjacent_sum(nums[1:])
-    
     return max(include, exclude)
 
 # Time Complexity: O(2^n)

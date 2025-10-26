@@ -11,9 +11,9 @@ def min_change_recursion(amount:int, coins:list[int]) -> int:
 def _min_change_recursion(amount:int, coins:list[int]) -> int:
     if amount == 0:
         return 0
-    
     if amount < 0:
         return float('inf')
+    
     min_coins = float('inf')
     for coin in coins:
         remaining_amount = amount - coin
@@ -28,30 +28,25 @@ def _min_change_recursion(amount:int, coins:list[int]) -> int:
 
 # Memoization Solution
 def min_change_memo(amount: int, coins: list[int]) -> int:
-
     ans = _min_change_memo(amount, coins, {})
     if ans == float('inf'):
         return -1
     return ans
 
 def _min_change_memo(amount: int, coins: list[int], memo: dict[int, int]) -> int:
-
     if amount in memo:
         return memo[amount]
-
     if amount == 0:
         return 0
-
     if amount < 0:
         return float('inf')
 
     min_coins = float('inf')
-
     for coin in coins:
         remaining_amount = amount - coin
         num_coins = 1 + _min_change_memo(remaining_amount, coins, memo)
         min_coins = min(min_coins, num_coins)
-
+        
     memo[amount] = min_coins
     return memo[amount]
 

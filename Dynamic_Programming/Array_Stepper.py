@@ -8,25 +8,19 @@
 # The answer is True. We start at idx 0, we could take 1 step or 2 steps forward. The correct choice is to take 1 step to idx 1. Then take 4 steps forward to the end at idx 5.
 
 def array_stepper(numbers: list[int]) -> bool:
-
     return _array_stepper(numbers, 0, {})
 
 def _array_stepper(numbers: list[int], i: int, memo: dict[int, bool]) -> bool:
-
     if i in memo:
         return memo[i]
-
     if i >= len(numbers) - 1:
         return True
-
     if i < 0:
         return False
 
     max_step = numbers[i]
-
     for step in range(1, max_step + 1):
         reachable = _array_stepper(numbers, i + step, memo)
-
         if reachable:
             memo[i] = True
             return True

@@ -5,7 +5,6 @@ def countdown(n):
         return
     print(n)
     countdown(n - 1)
-
 countdown(5)
 
 # Output
@@ -23,7 +22,6 @@ def countdown_v2(n):
         return
     countdown_v2(n - 1)
     print(n)
-
 countdown_v2(5)
 
 # Output
@@ -42,7 +40,6 @@ def countdown_v3(n):
     print("entering " + str(n))
     countdown_v3(n - 1)
     print("return from " + str(n))
-
 countdown_v3(5)
 
 # Output

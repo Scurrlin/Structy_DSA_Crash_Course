@@ -24,10 +24,8 @@ def get_node_value(head, index):
 def get_node_value_recursion(head, index):
     if head is None:
         return None
-    
     if index == 0:
-        return head.val
-    
+        return head.val 
     return get_node_value_recursion(head.next, index - 1)
 
 # Time Complexity: O(n)

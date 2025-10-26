@@ -25,7 +25,6 @@ def zipper_list(head1, head2):
         tail.next = current1
     if current2 is not None:
         tail.next = current2
-    
     return head1
 
 
@@ -36,10 +35,8 @@ def zipper_list(head1, head2):
 def zipper_list_recursion(head1, head2):
     if head1 is None and head2 is None:
         return None
-    
     if head1 is None:
         return head2
-    
     if head2 is None:
         return head1
     

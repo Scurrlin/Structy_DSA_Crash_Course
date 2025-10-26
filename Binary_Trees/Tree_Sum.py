@@ -9,22 +9,17 @@
 from collections import deque
 
 def tree_sum(root):
-    if root is None:
-        return 0
-    
-    total_sum = 0
-    queue = deque([ root ])
+    if root is None: return 0
+    sum, queue = 0, deque([root])
+
     while queue:
         current = queue.popleft()
-        total_sum += current.val
-
+        sum += current.val
         if current.left is not None:
             queue.append(current.left)
-
         if current.right is not None:
             queue.append(current.right)
-
-    return total_sum
+    return sum
 
 # Time Complexity: O(n)
 # Space Complexity: O(n)        

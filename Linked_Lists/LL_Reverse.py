@@ -26,6 +26,5 @@ def reverse_list_recursion(head, prev = None):
     head.next = prev
     return reverse_list_recursion(next, head)
 
-
 # Time Complexity: O(n)
 # Space Complexity: O(n)

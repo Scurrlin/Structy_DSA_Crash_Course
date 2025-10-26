@@ -7,11 +7,9 @@
 #         self.right = None
 
 def depth_first_values(root):
-    if root is None:
-        return []
+    if root is None: return []
+    values, stack = [], [root]
 
-    values =[]
-    stack = [root]
     while stack:
         current = stack.pop()
         print(current.val)
@@ -20,6 +18,7 @@ def depth_first_values(root):
             stack.push(current.right)
         if current.left is not None:
             stack.push(current.left)
+    
     return values
 
 # Time Complexity: O(n)
@@ -29,6 +28,7 @@ def depth_first_values(root):
 def depth_first_values_recursive(root):
     if root is None:
         return []
+    
     left_values = depth_first_values_recursive(root.left)
     right_values = depth_first_values_recursive(root.right)
     return [ root.val, *left_values, *right_values ]

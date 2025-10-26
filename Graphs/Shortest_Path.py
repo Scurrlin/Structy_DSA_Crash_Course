@@ -3,26 +3,21 @@
 from collections import deque
 
 def shortest_path(edges, node_A, node_B):
-
     visited = set()
     graph = make_graph(edges)
     queue = deque([ (node_A, 0) ])
     
     while queue:
-        node, distance = queue.popleft()
-        
+        node, distance = queue.popleft()    
         if node == node_B:
             return distance
-        
         for neighbor in graph[node]:
             if neighbor not in visited:
                 visited.add(neighbor)
                 queue.append((neighbor, distance + 1))
-    
     return -1 
 
 def make_graph(edges):
-
     graph = {}
     for node1, node2 in edges:
         if node1 not in graph:

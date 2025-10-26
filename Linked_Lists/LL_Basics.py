@@ -19,7 +19,6 @@ def print_list(head):
     while current is not None:
         print(current.val)
         current = current.next
-
 print_list(a)
 
 # Output
@@ -34,7 +33,6 @@ def print_list_recursion(head):
         return
     print(head.val)
     print_list_recursion(head.next)
-
 print_list_recursion(a)
 
 # Output

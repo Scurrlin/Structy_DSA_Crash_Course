@@ -3,34 +3,28 @@
 # You may assume that the target amount is non-negative.
 
 def sum_possible(amount: int, numbers: list[int]) -> bool:
-
     if amount == 0:
         return True
-
     if amount < 0:
         return False
 
     for num in numbers:
         if sum_possible(amount - num, numbers):
             return True
-
+        
     return False
 
 # Time Complexity: O(n^a)
 # Space Complexity: O(n)
 
 def sum_possible(amount: int, numbers: list[int]) -> bool:
-
     return _sum_possible(amount, numbers, {})
 
 def _sum_possible(amount: int, numbers: list[int], memo: dict[int, bool]) -> bool:
-
     if amount in memo:
         return memo[amount]
-
     if amount == 0:
         return True
-
     if amount < 0:
         return False
 

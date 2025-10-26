@@ -7,11 +7,9 @@
 #         self.right = None
 
 def breadth_first_values(root):
-    if root is None:
-        return []
+    if root is None: return []
+    values, queue = [], [root]
 
-    values = []
-    queue = [root]
     while queue:
         current = queue.pop(0)
         values.append(current.val)
@@ -20,6 +18,7 @@ def breadth_first_values(root):
             queue.append(current.left)
         if current.right:
             queue.append(current.right)
+    
     return values
 
 # Time Complexity: O(n)

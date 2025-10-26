@@ -5,35 +5,26 @@ from collections import deque
 
 def has_path_bfs(graph, src, dst):
     queue = deque([src]) 
-    
     while queue:
         current = queue.popleft()
-        
         if current == dst:
-            return True
-        
+            return True    
         for neighbor in graph[current]:
             queue.append(neighbor)
-    
     return False
 
 # Time Complexity: O(n)
 # Space Complexity: O(n)
 
 #DFS
-
 def has_path_dfs(graph, src, dst):
-
     stack = [src]
     while stack:
         current = stack.pop()
-        
         if current == dst:
             return True
-        
         for neighbor in graph[current]:
             stack.append(neighbor)
-    
     return False
 
 # Time Complexity: O(n)
@@ -41,14 +32,11 @@ def has_path_dfs(graph, src, dst):
 
 #Recursive Solution
 def has_path_recursion(graph, src, dst):
-
     if src == dst:
         return True
-    
     for neighbor in graph[src]:
         if has_path_recursion(graph, neighbor, dst) == True:
             return True
-        
     return False
 
 # Time Complexity: O(n)

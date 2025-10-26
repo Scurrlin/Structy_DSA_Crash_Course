@@ -3,7 +3,6 @@
 # You may assume that the grid contains at least one island.
 
 def minimum_island(grid):
-
     visited = set()
     min_size = float("inf")
     size = 0
@@ -15,13 +14,11 @@ def minimum_island(grid):
     return min_size
 
 def explore_grid(grid, r, c, visited):
-
     row_inbounds = 0 <= r < len(grid)
     col_inbounds = 0 <= c < len(grid[0])
     
     if not row_inbounds or not col_inbounds:
         return 0
-    
     if grid[r][c] == "W":
         return 0
     
@@ -35,7 +32,6 @@ def explore_grid(grid, r, c, visited):
     size += explore_grid(grid, r+1, c, visited)
     size += explore_grid(grid, r, c-1, visited)
     size += explore_grid(grid, r, c+1, visited)
-    
     return size
 
 # Time Complexity: O(n)

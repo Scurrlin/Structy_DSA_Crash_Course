@@ -12,12 +12,10 @@ def connected_components_count(graph):
     return count
 
 def explore(graph, current, visited):
-
     if current in visited:
         return False
 
     visited.add(current)
-
     for neighbor in graph[current]:
         explore(graph, neighbor, visited)
         
@@ -28,12 +26,10 @@ def explore(graph, current, visited):
 
 # Recursive Solution
 def connected_components_count(graph):
-
     visited = set()
     count = 0 
     
     def dfs(node):
-
         visited.add(node)
         for neighbor in graph[node]:
             if neighbor not in visited:

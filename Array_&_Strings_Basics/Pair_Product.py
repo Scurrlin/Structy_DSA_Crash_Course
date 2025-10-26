@@ -2,13 +2,10 @@
 
 def pair_product(numbers, target):
     prev_nums = {}
-
     for index, num in enumerate(numbers):
         complement = target / num
-
         if complement in prev_nums:
             return (prev_nums[complement], index)
-        
         prev_nums[num] = index
 
 # Time Complexity: O(n)

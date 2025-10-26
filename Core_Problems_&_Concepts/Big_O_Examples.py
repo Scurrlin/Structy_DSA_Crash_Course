@@ -39,7 +39,6 @@ print(sentence.split(" "))
 def function2(n):
     for i in range(0, int(n/2)):
         print(i)
-
 function2(20)
 
 # Example 5
@@ -49,7 +48,6 @@ def function3(n):
     for i in range(1, n):
         nums.append(i)
     return nums
-
 print(function3(10))
 
 # O(n^2) => polynomial
@@ -67,7 +65,6 @@ def function4(n):
     for i in range(1, n):
         nums.insert(0, i)
     return nums
-
 print(function4(10))
 
 # Example 3
@@ -76,8 +73,6 @@ def function5(s):
     for char1 in s:
         for char2 in s:
             print(char1 + ',' + char2)
-    
     for char1 in s:
         print(char1)
-
 function5('qrs')

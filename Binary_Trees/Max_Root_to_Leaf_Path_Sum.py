@@ -12,7 +12,6 @@
 def max_path_sum_recursion(root):
     if root is None:
         return float("-inf")
-
     if root.left is None and root.right is None:
         return root.val
     

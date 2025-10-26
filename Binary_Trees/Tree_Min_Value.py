@@ -21,13 +21,10 @@ def tree_min_value_bf(root):
         current = queue.popleft()
         if current.val < smallest:
             smallest = current.val
-
         if current.left is not None:
             queue.append(current.left)
-
         if current.right is not None:
             queue.append(current.right)
-
     return smallest
 
 # Time Complexity: O(n)
@@ -42,13 +39,10 @@ def tree_min_value_df(root):
         current = stack.pop()
         if current.val < smallest:
             smallest = current.val
-
         if current.left is not None:
             stack.append(current.left)
-
         if current.right is not None:
             stack.append(current.right)
-
     return smallest
 
 # Time Complexity: O(n)
@@ -61,7 +55,6 @@ def tree_min_value_recursion(root):
     
     min_left = tree_min_value_recursion(root.left)
     min_right = tree_min_value_recursion(root.right)
-
     return min(root.val, min_left, min_right)
 
 # Time Complexity: O(n)

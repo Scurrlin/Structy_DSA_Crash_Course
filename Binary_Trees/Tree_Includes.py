@@ -9,36 +9,28 @@
 from collections import deque
 
 def tree_includes(root, target):
-    if root is None:
-        return False
-    
+    if root is None: return False
     queue = deque([ root ])
 
     while queue:
         current = queue.popleft()
         if current.val == target:
             return True
-    
         if current.left:
             queue.append(current.left)
-
         if current.right:
             queue.append(current.right)
-    
     return False
 
 # Time Complexity: O(n)
 # Space Complexity: O(n)
 
 # Recursive solution
-
 def tree_includes_recursion(root, target):
     if root is None:
         return False
-    
     if root.val == target:
         return True
-    
     return tree_includes_recursion(root.left, target) or tree_includes_recursion(root.right,target)
 
 # Time Complexity: O(n)

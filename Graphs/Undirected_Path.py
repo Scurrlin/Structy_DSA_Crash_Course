@@ -7,7 +7,6 @@ def undirected_path(edges, node_A, node_B):
 
 def build_graph(edges):
     graph = {}
-
     for edge in edges:
         a, b = edge
         
@@ -23,18 +22,15 @@ def build_graph(edges):
 
 def has_path(graph, src, dst, visited):
     stack = [src]
-    
     while stack:
         current = stack.pop()
         
         if current == dst:
-            return True
-        
+            return True        
         if current in visited:
             continue
         
         visited.add(current)
-        
         for neighbor in graph[current]:
             stack.append(neighbor)
     
@@ -46,14 +42,11 @@ def has_path(graph, src, dst, visited):
 # Recursive Solution
 
 def undirected_path_recursion(edges: list[tuple[int, int]], node_A: int, node_B: int) -> bool:
-
     graph = build_graph(edges)
     return has_path(graph, node_A, node_B, set())
 
 def build_graph(edges: list[tuple[int, int]]) -> dict[int, list[int]]:
-
     graph = {}
-
     for edge in edges:
         a, b = edge
 
@@ -69,15 +62,12 @@ def build_graph(edges: list[tuple[int, int]]) -> dict[int, list[int]]:
 
 
 def has_path(graph: dict[int, list[int]], src: int, dst: int, visited: set[int]) -> bool:
-
     if src == dst:
         return True
-
     if src in visited:
         return False
 
     visited.add(src)
-
     for neighbor in graph[src]:
         if has_path(graph, neighbor, dst, visited) == True:
             return True

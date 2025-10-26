@@ -7,20 +7,16 @@
 # To generate further numbers of the sequence, calculate the sum of previous two numbers.
 
 def fib(n: int) -> int:
-
     memo = {}
     return _fib(n, memo)
 
 def _fib(n: int, memo: dict[int, int]) -> int:
-
     if n == 0 or n == 1:
         return n
-
     if n in memo:
         return memo[n]
 
     fib_n =  _fib(n - 1, memo) + _fib(n - 2, memo)
-
     memo[n] = fib_n
     return memo[n]
 
@@ -29,12 +25,10 @@ def _fib(n: int, memo: dict[int, int]) -> int:
 
 # Recursive Solution
 def fib(n: int) -> int:
-
     if n == 0 or n == 1:
         return n
 
     fib_n = fib(n - 1) + fib(n - 2)
-
     return fib_n
 
 # Time Complexity: O(2^n)

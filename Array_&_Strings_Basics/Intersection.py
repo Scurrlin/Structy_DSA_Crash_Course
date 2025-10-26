@@ -6,7 +6,6 @@ def intersection(a, b):
 
     for item_a in a:
         items_set.add(item_a)
-    
     for item_b in b:
         if item_b in items_set:
             result.append(item_b)
